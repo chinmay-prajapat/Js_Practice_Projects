@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><h1>Bank System</h1></div>
+  </body>
+  <script>
+    var myObj = {
+      account: 123,
+      amount: 1000,
+    };
+    myFun = () => {
+      var myName = prompt("enter your name");
+      var pass = prompt("entet your password");
+      if (myName === "chinmay" && pass === "chinmay") {
+        return true;
+      } else {
+        throw new Error("Invalid username and password");
+        return false;
+      }
+    };
+
+    myBank = () => {
+      if (myFun() === true) {
+        var acc = prompt("enter your valid account number:");
+        if (parseInt(acc) === myObj.account) {
+          do {
+            var dici = prompt(
+              "1.Deposit\n 2.WithDrow\n3.Check Balance\n any number to exit"
+            );
+            console.log(dici);
+            switch (parseInt(dici)) {
+              case 1:
+                var money = prompt("enter a numerical amount to deposit");
+                if (isNaN(money) === true) {
+                  alert("Please enter a valid amount");
+                } else {
+                  myObj.amount += parseInt(money);
+                  alert("your current balance is " + myObj.amount);
+                }
+                break;
+              case 2:
+                money = prompt("enter an mount");
+                if (money > myObj.amount) {
+                  alert("Ooops the amount is not sufficient");
+                } else {
+                  myObj.amount -= money;
+                  alert("your current balance is " + myObj.amount);
+                }
+                break;
+              case 3:
+                alert(myObj.amount);
+                break;
+
+              default:
+                if (dici > 3 || dici < 1) {
+                  alert("Ooops these are the wrong options\n Try again later");
+                  return false;
+                }
+                break;
+            }
+          } while (true);
+        } else {
+          alert("Invalid account number");
+        }
+      }
+    };
+    try {
+      myBank();
+    } catch (error) {
+      alert("Invalid " + error);
+    }
+  </script>
+</html>
