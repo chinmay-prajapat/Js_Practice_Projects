@@ -149,7 +149,6 @@
       <p>Motion</p>
     </div>
   </div>
-
   <script>
     const panels = document.querySelectorAll('.panel')
     const div = document.querySelectorAll('div');
@@ -158,12 +157,10 @@
 
       this.classList.toggle('open')
       console.log(div)
-
     }
     const toggleActive = function (e) {
       // div.classList.remove('open')
       if (e.propertyName.includes('flex')) {
-
         this.classList.toggle('open-active')
       }
     }
