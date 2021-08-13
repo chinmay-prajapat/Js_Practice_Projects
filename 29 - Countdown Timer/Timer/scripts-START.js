@@ -87,7 +87,7 @@ const endTimer = function (sec) {
   const hour = now.getHours();
   const min = now.getMinutes(sec);
   console.log(hour - 12, min);
-  endTime.textContent = `${hour - 12}:${min}`;
+  endTime.textContent = `The timer ends at${hour - 12}:${min}`;
 };
 const startTimer = function () {
   timer(this.dataset.time);
