@@ -87,7 +87,9 @@ const endTimer = function (sec) {
   const hour = now.getHours();
   const min = now.getMinutes(sec);
   console.log(hour - 12, min);
-  endTime.textContent = `The Timer Ends At ${hour - 12}:${min}`;
+  endTime.textContent = `The Timer Ends At ${hour < 10 ? "0" : ""}${
+    hour > 12 ? hour - 12 : hour
+  }:${min}`;
 };
 const startTimer = function () {
   timer(this.dataset.time);
@@ -120,14 +122,15 @@ const currentTime = function () {
   const date = now.getDate();
   const month = now.getMonth();
 
-  p.textContent = `${hour < 10 ? "0" : ""}${hour - 12}:${
+  p.textContent = `${hour < 12 ? "0" : ""}${hour > 12 ? hour - 12 : hour}:${
     mins < 10 ? "0" : ""
   }${mins} ${date}/${month}`;
 };
 currentTime();
 document.querySelector("#custom").addEventListener("submit", function (e) {
   e.preventDefault();
-  const val = document.querySelector("input").value;
-  timer(val);
-  document.querySelector("input").blur();
+  const val = document.querySelector("input");
+  timer(val.value);
+  val.value = "";
+  val.blur();
 });
