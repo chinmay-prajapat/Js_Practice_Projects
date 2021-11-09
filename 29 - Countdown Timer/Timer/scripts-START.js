@@ -60,7 +60,7 @@ const timer = function (sec) {
 
   display(sec);
   endTimer(then);
-  console.log(now, then);
+
   countDown = setInterval(() => {
     const second = Math.round((then - Date.now()) / 1000);
 

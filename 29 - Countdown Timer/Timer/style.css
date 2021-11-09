@@ -27,17 +27,18 @@
     align-items: center;
 
   }
-  .lunch_break{
-   background:#F463B9 
-  }
+
+
 
 }
+
+
 
 html {
   box-sizing: border-box;
   font-size: 10px;
   /* background: #8E24AA; */
-  background: linear-gradient(45deg, #42a5f5 0%, #478ed1 50%, #0d47a1 100%);
+  background: url('379ccba5a68397e5366956db60585819.png');
 }
 
 .bg {
@@ -98,7 +99,8 @@ body {
   background: none;
   border: 0;
   cursor: pointer;
-  color: white;
+  color: black;
+  font-weight: bold;
   font-size: 2rem;
   text-transform: uppercase;
   background: rgba(0, 0, 0, 0.1);
@@ -112,6 +114,11 @@ body {
 .timer__button:focus {
   background: rgba(0, 0, 0, 0.2);
   outline: 0;
+}
+
+.lunch_break {
+  background: #F463B9;
+  color: #fff;
 }
 
 .display {
